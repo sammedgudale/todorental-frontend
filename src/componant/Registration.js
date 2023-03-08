@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signup } from "../action/UserActions";
+import r from '../assets/register.jpg';
 
 const Registration = (props) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [contactNo, setContactNo] = useState("");
-  const [address, setAddress] = useState("");
-  const [role, setRole] = useState("");
-  const [adharCard, setAdharCard] = useState("");
+    const [first_name, setFirst_name] = useState("");
+    const [last_name, setLast_name] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [contact_number, setContactNo] = useState("");
+    const [role, setRole] = useState("");
 
   const dispatch = useDispatch();
 
@@ -21,7 +21,12 @@ const Registration = (props) => {
 
   const onSignup = () => {
     dispatch(
-      signup(name, email, password, contactNo, address, role, adharCard)
+      signup( first_name,
+        last_name,
+        email,
+        password,
+        contact_number,
+        role)
     );
   };
 
@@ -43,177 +48,123 @@ const Registration = (props) => {
     setRole(e.target.value);
   };
   return (
-    <div
-    class="text-center mt-5"
-  >
+<>
+<section class="vh-100" >
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card-white text-black" >
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-    <div class="container col-sm-4 my-5 border border-dark border-5 ">
-      <form class="row g-3 needs-validation " novalidate>
-        <div class="col-md-4 mt-3">
-          <label for="validationCustom04" class="form-label">
-            Role
-          </label>
-          <select
-            onChange={Role}
-            class="form-select"
-            id="validationCustom04"
-            required
-          >
-            <option>Choose..</option>
-            <option >OWNER</option>
-            <option>SEEKER</option>
-          </select>
-          <div class="invalid-feedback">Please select a valid state.</div>
-        </div>
-        <br></br>
-        <br></br>
-        <div class="col-md-6">
-          <label for="validationCustomUsername" class="form-label">
-            Name
-          </label>
-          <div class="input-group has-validation">
-            <input
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
-              type="text"
-              class="form-control"
-              id="validationCustomUsername"
-              aria-describedby="inputGroupPrepend"
-              required
-            />
-            <div class="invalid-feedback">Please choose First Name.</div>
-          </div>
-        </div>{" "}
-        <div class="col-md-12 mt-3">
-          <label for="validationCustomUsername" class="form-label">
-            Email
-          </label>
-          <div class="input-group has-validation">
-            <input
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-              type="text"
-              class="form-control"
-              id="validationCustomUsername"
-              aria-describedby="inputGroupPrepend"
-              required
-            />
-            <div class="invalid-feedback">Please choose Email.</div>
-          </div>
-        </div>
-        <div class="col-md-12 mt-3">
-          <label for="validationCustomUsername" class="form-label">
-            Password
-          </label>
-          <div class="input-group has-validation">
-            <input
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-              type="text"
-              class="form-control"
-              id="validationCustomUsername"
-              aria-describedby="inputGroupPrepend"
-              required
-            />
-            <div class="invalid-feedback">Please choose a Password.</div>
-          </div>
-        </div>
-        <div class="col-md-4 mt-3">
-          <label for="validationCustomUsername" class="form-label">
-            ContactNo
-          </label>
-          <div class="input-group has-validation">
-            <input
-              onChange={(e) => {
-                setContactNo(e.target.value);
-              }}
-              type="text"
-              class="form-control"
-              id="validationCustomUsername"
-              aria-describedby="inputGroupPrepend"
-              required
-            />
-            <div class="invalid-feedback">Please Enter Phone Number.</div>
-          </div>
-        </div>
-        <div class="col-md-4 mt-3">
-          <label for="validationCustom05" class="form-label">
-            Address
-          </label>
-          <input
-            onChange={(e) => {
-              setAddress(e.target.value);
-            }}
-            type="text"
-            class="form-control"
-            id="validationCustom05"
-            required
-          />
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
-          <div class="invalid-feedback">Please provide Address.</div>
-        </div>
-        <div class="col-md-4 mt-3">
-          <label for="validationCustom05" class="form-label">
-            Adharcard
-          </label>
-          <input
-            onChange={(e) => {
-              setAdharCard(e.target.value);
-            }}
-            type="text"
-            class="form-control"
-            id="validationCustom05"
-            required
-          />
+                <form class="mx-1 mx-md-4" novalidate >
+                
 
-          <div class="invalid-feedback">Please provide a valid zip.</div>
-        </div>
-        <div class="col-12">
-          <div class="form-check my-3 float-left">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="invalidCheck"
-              required
-            />
-            <label class="form-check-label" for="invalidCheck">
-              Agree to terms and conditions
-            </label>
-            <div class="invalid-feedback">
-              You must agree before submitting.
+                <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                        <select onChange={Role} class="form-control">
+                        <option>Choose..</option>
+                        <option>ADMIN</option>
+              <option>OWNER</option>
+              <option>SEEKER</option>
+                        </select>
+                     
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example1c" class="form-control"  onChange={(e) => {
+                  setFirst_name(e.target.value);
+                }} />
+                      <label class="form-label" for="form3Example1c" >First Name</label>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example1c" class="form-control"  onChange={(e) => {
+                  setLast_name(e.target.value);
+                }} />
+                      <label class="form-label" for="form3Example1c">Last Name</label>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="email" id="form3Example3c" class="form-control"  onChange={(e) => {
+                  setEmail(e.target.value);
+                }} />
+                      <label class="form-label" for="form3Example3c">Your Email</label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="password" id="form3Example4c" onChange={(e) => {
+                  setPassword(e.target.value);
+                }} class="form-control" />
+                      <label class="form-label" for="form3Example4c">Password</label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="number" id="form3Example4c" onChange={(e) => {
+                  setContactNo(e.target.value);
+                }} class="form-control" />
+                      <label class="form-label" for="form3Example4c">Contact No</label>
+                    </div>
+                  </div>
+
+                  {/* <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="password" id="form3Example4cd" class="form-control" />
+                      <label class="form-label" for="form3Example4cd">Repeat your password</label>
+                    </div>
+                  </div> */}
+
+                  <div class="form-check d-flex justify-content-center mb-5">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" required />
+                    <label class="form-check-label" for="form2Example3">
+                      I agree all statements in <a href="#!">Terms of service</a>
+                    </label>
+                  </div>
+
+              
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <Link to="/login">
+                    <button type="submit" onClick={(Alert, onSignup)} class="btn btn-primary btn-lg">Register</button>
+                    </Link>
+                    
+                  </div>
+
+                </form>
+
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                <img src={r}
+                  class="img-fluid" alt="Sample image"/>
+
+              </div>
             </div>
           </div>
         </div>
-        <br></br>
-        <br></br>
-        <div class="col-12">
-          <Link to="/login">
-            <button
-              class="btn btn-primary float-left"
-              type="submit"
-              onClick={(Alert, onSignup)}
-            >
-              Register
-            </button>
-          </Link>
-          <p class="col-sm-auto float-left ml-5">Already a User?</p>
-          <Link
-            type="button"
-            class="btn btn-primary float-right mb-5"
-            to="/login"
-          >
-            Login Here
-          </Link>
-        </div>
-        <br></br>
-        <br></br>
-      </form>
+      </div>
     </div>
   </div>
+</section> 
+<br/><br/>
+      </>
   )
 }
 

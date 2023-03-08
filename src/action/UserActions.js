@@ -140,13 +140,12 @@ export const getUser = () => {
 };
 
 export const signup = (
-  name,
+  first_name,
+  last_name,
   email,
   password,
-  contactNo,
-  address,
-  role,
-  adharCard
+  contact_number,
+  role
 ) => {
   return (dispatch) => {
     dispatch({
@@ -160,13 +159,12 @@ export const signup = (
     };
 
     const body = {
-      name,
+      first_name,
+      last_name,
       email,
       password,
-      contactNo,
-      address,
-      role,
-      adharCard,
+      contact_number,
+      role
     };
     const url = "http://localhost:7070/users/register";
     axios
