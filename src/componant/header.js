@@ -24,15 +24,13 @@ function header() {
           <a class="nav-link" href="#">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/register">Contact Us</a>
+          <a class="nav-link" href="#">Contact Us</a>
         </li>
       </ul>
       <form class="d-flex">
       <a href='login'><button type="button" class="btn btn-secondary">Login</button></a>
       &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href='register'>
-          <button class="btn btn-outline-success" type="submit">Register</button>
-        </a>
+     <a href='register'><button class="btn btn-outline-success" type="button">Register</button></a>
       </form>
     </div>
   </div>
