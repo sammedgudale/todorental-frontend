@@ -4,7 +4,7 @@ const page404 = () => {
   return (
    <>
    <diV>
-    <h1>asokaoslklas</h1>
+    <h1>Page 404</h1>
    </diV>
    </>
   )

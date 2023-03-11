@@ -28,12 +28,12 @@ function header() {
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="/viewproperty">
                     View Property
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="/AboutUs">
                     About
                   </a>
                 </li>

@@ -2,16 +2,19 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import { signin } from "../action/UserActions";
+import { signin } from "../Actions/UserActions";
 
 import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
-  const dispatch = useDispatch();
-  const userSignin = useSelector((store) => store.userSignin);
-  const { loading, error, response } = userSignin;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const userSignin = useSelector((store) => store.userSignin);
+  const { loading, error, response } = userSignin;
+
+  const dispatch = useDispatch();
+
   const OnSignin = () => {
     dispatch(signin(email, password));
   };
@@ -47,7 +50,7 @@ const Login = () => {
           <div class="d-flex justify-content-around align-items-center mb-4">
             
           </div>
-          <Link to={"/p"}> <button type="submit"  onClick={OnSignin} class="btn btn-primary btn-lg btn-block">Sign in</button></Link>     
+          <Link to={"/home"}> <button type="submit"  onClick={OnSignin} class="btn btn-primary btn-lg btn-block">Sign in</button></Link>     
         </form>
       </div>
     </div>

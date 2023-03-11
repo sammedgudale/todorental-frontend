@@ -4,29 +4,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { logout } from "../Actions/UserActions";
 
-
 import "../App.css";
 
-const Pro = () => {
+const Navigation = (props) => {
   const dispatch = useDispatch();
-//   const userSignin = useSelector((store) => store.userSignin);
-//   const { loading, error, response } = userSignin;
-  const [url, setUrl] = useState("");
   const userSignin = useSelector((store) => store.userSignin);
   const { loading, error, response } = userSignin;
+
+  const [url, setUrl] = useState("");
 
   const onLgout = () => {
     dispatch(logout());
   };
 
   useEffect(() => {
-    if (response && response.role === "ADMIN") {
+;
+    if (response && response.role == "ADMIN") {
       setUrl("/adminprofile");
     } else if (response && response.role === "OWNER") {
-      setUrl("/owenerprofile");
-    } else if (response && response.role === "SEEKER") {
+      setUrl("/ownerprofile");
+    } else if (response && response.role == "SEEKER") {
       setUrl("/seekerprofile");
-    } else if (response && response.status === "error") {
+    } else if (response && response.status == "error") {
       alert(response.error);
     } else if (error) {
       alert(error);
@@ -35,13 +34,6 @@ const Pro = () => {
 
   return (
     <div>
-      <div className="container bg-info mt-4">
-        <div>
-          <span>
-            &nbsp;accomodation@gmail.com
-          </span>
-        </div>
-      </div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <Link class="navbar-brand" to="/">
@@ -78,15 +70,9 @@ const Pro = () => {
         >
           Registration
         </Link>
-        <Link to={url}>
-          <span class="material-icons iconfont">account_circle</span>
-        </Link>
-        <span onClick={onLgout} class="material-icons ml-3 mr-3">
-          logout
-        </span>
       </nav>
     </div>
   );
 };
 
-export default Pro;
+export default Navigation;

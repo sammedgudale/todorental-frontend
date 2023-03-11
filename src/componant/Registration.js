@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { signup } from "../action/UserActions";
+import { signup } from "../Actions/UserActions";
 import r from '../assets/register.jpg';
 
 const Registration = (props) => {
@@ -10,7 +10,7 @@ const Registration = (props) => {
     const [last_name, setLast_name] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [contact_number, setContactNo] = useState("");
+    const [contactNo, setContactNo] = useState("");
     const [role, setRole] = useState("");
 
   const dispatch = useDispatch();
@@ -21,11 +21,10 @@ const Registration = (props) => {
 
   const onSignup = () => {
     dispatch(
-      signup( first_name,
-        last_name,
+      signup( first_name,last_name,
         email,
         password,
-        contact_number,
+        contactNo,
         role)
     );
   };
