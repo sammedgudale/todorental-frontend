@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { logout } from "../Actions/UserActions";
-import Navigation from './Navigation';
+import Header from "./header"
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -32,7 +32,8 @@ const Home = () => {
   return (
 
 <div class="container col-xxl-9  py-5 pt-0">
-<Navigation/>
+  <Header/>
+
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
       <div class="col-10 col-sm-8 col-lg-6">
         <img src={homeimg} class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"/>

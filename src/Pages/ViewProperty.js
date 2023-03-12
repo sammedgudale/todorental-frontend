@@ -41,6 +41,13 @@ const ViewProperty = (props) => {
       >
         View All Properties
       </Link>
+      <Link
+        type="button"
+        class="col-sm-12 btn btn-secondary float-center m-3"
+        to="/addfacility"
+      >
+        Add Facility
+      </Link>
     </div>
   );
 };

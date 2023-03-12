@@ -15,7 +15,8 @@ import SeekerProfile from "./Dashboards/SeekerProfile";
 import AboutUs from "./componant/AboutUs";
 import AddProperty from "./Pages/AddProperty";
 import ViewProperty from "./Pages/ViewProperty";
-import Navigation from "./componant/Navigation";
+import AddFacility from "./Pages/AddFacility";
+//import Navigation from "./componant/Navigation";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path="/owenerprofile" element={<OwnerProfile />} />
         <Route path="/p" element={<Pro />} />
         <Route path="/addprop" element={<AddProperty />} />
+        <Route path="/addfacility" element={<AddFacility />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/login" element={<Login />} />
         

@@ -51,7 +51,7 @@ export const edit = (id, email, contactNo, address, photo) => {
       address,
       //photo,
     };
-    const url = `http://localhost:9192/users/update/${id}`;
+    const url = `http://localhost:8080/users/update/${id}`;
     axios
       .put(url, body, header)
       .then((response) => {
@@ -90,7 +90,7 @@ export const getProperty = () => {
     };
 
     const body = {};
-    const url = "http://localhost:9192/users/property";
+    const url = "http://localhost:8080/users/property";
     axios
       .get(url, body, header)
       .then((response) => {
@@ -121,7 +121,7 @@ export const getUser = () => {
     };
 
     const body = {};
-    const url = "http://localhost:9192/admin/users";
+    const url = "http://localhost:8080/admin/users";
     axios
       .get(url, body, header)
       .then((response) => {
@@ -166,7 +166,7 @@ export const signup = (
       contact_number,
       role
     };
-    const url = "http://localhost:9192/users/register";
+    const url = "http://localhost:8080/users/register";
     axios
       .post(url, body, header)
       .then((response) => {
@@ -202,7 +202,7 @@ export const signin = (email, password) => {
       email,
       password,
     };
-    const url = "http://localhost:9192/users/login";
+    const url = "http://localhost:8080/users/login";
     axios
       .post(url, body, header)
       .then((response) => {
@@ -235,7 +235,7 @@ export const getOwner = (id) => {
     };
 
     const body = { id };
-    const url = "http://localhost:9192/seeker/contactowner";
+    const url = "http://localhost:8080/seeker/contactowner";
     axios
       .post(url, body, header)
       .then((response) => {

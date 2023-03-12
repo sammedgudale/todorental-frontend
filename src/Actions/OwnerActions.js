@@ -8,7 +8,7 @@ import {
 } from "../Constants/OwnerConstants";
 import axios from "axios";
 
-export const addFacilities = (propId, furnished, securityGuard, lift) => {
+export const addFacilities = (propId, furnished, securityGuard, lift,cctv) => {
   return (dispatch) => {
     dispatch({
       type: FACILITY_ADD_REQUEST,
@@ -25,8 +25,9 @@ export const addFacilities = (propId, furnished, securityGuard, lift) => {
       furnished,
       securityGuard,
       lift,
+      cctv
     };
-    const url = "http://localhost:9192/owner/addfacilities";
+    const url = "http://localhost:8080/owner/addfacilities";
     axios
       .post(url, body, header)
       .then((response) => {
@@ -69,7 +70,7 @@ export const addProperty = (
       status,
       rent
     };
-    const url = "http://localhost:9192/owner/property";
+    const url = "http://localhost:8080/owner/property";
     axios
       .post(url, body, header)
       .then((response) => {
